@@ -7,8 +7,8 @@ public class LinkedListProblem {
         MyNode<Integer> myThirdNode = new MyNode<>(70);
         MyLinkedList myLinkedList = new MyLinkedList();
         myLinkedList.add(myFirstNode);
-        myLinkedList.add(mySecondNode);
-        myLinkedList.add(myThirdNode);
+        myLinkedList.append(mySecondNode);
+        myLinkedList.append(myThirdNode);
         myLinkedList.printMyNodes();
     }
 
