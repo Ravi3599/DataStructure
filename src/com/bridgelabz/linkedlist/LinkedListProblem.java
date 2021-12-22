@@ -5,11 +5,11 @@ public class LinkedListProblem {
         MyNode<Integer> myFirstNode = new MyNode<>(56);
         MyNode<Integer> mySecondNode = new MyNode<>(30);
         MyNode<Integer> myThirdNode = new MyNode<>(70);
-        myFirstNode.setNext(mySecondNode);
-        mySecondNode.setNext(myThirdNode);
-        boolean result = myFirstNode.getNext().equals(mySecondNode)&& mySecondNode.getNext().equals(myThirdNode);
-      
+        MyLinkedList myLinkedList = new MyLinkedList();
+        myLinkedList.add(myFirstNode);
+        myLinkedList.add(mySecondNode);
+        myLinkedList.add(myThirdNode);
+        myLinkedList.printMyNodes();
     }
 
 }
-
