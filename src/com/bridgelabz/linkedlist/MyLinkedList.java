@@ -37,10 +37,11 @@ public class MyLinkedList {
         myNode.setNext(newNode);
         newNode.setNext(tempNode);
         }
-        public INode pop(){
+        public INode popLast(){
         INode tempNode = this.head;
-        this.head= head.getNext();
-        return tempNode;
+        tempNode = tempNode.getNext();
+        tempNode.setNext(null);
+        return tail;
         }
     public  void printMyNodes(){
         StringBuffer myNodes = new StringBuffer("My Nodes:");
