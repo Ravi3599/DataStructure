@@ -10,6 +10,7 @@ public class MyStackMain {
 		myStack.push(myFirstNode);
 		myStack.push(mySecondNode);
 		myStack.push(myThirdNode);
+		myStack.isEmpty();
 		myStack.size();
 		Integer valueOfPeekEle = myStack.peek();
 		System.out.println("Peek Element "+valueOfPeekEle);

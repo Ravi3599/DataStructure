@@ -32,6 +32,14 @@ public class MyLinkedList {
             this.tail=newNode;
         }
         }
+     public void isEmpty() {
+    	 if(head == null) {
+    		 System.out.println("Empty");
+    	 }
+    	 else {
+    		 System.out.println("Not Empty");
+    	 }
+     }
      public void insert(INode myNode ,INode newNode){
         INode tempNode = myNode.getNext();
         myNode.setNext(newNode);
