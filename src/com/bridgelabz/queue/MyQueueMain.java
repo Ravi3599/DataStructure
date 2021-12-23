@@ -10,6 +10,8 @@ public class MyQueueMain {
 		myQueue.enqueue(myFirstNode);
 		myQueue.enqueue(mySecondNode);
 		myQueue.enqueue(myThirdNode);
+		myQueue.size();
+		myQueue.isEmpty();
 		myQueue.dequeue();
 		myQueue.dequeue();
 		myQueue.printQueue();

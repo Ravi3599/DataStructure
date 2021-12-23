@@ -41,11 +41,22 @@ public class MyLinkedList {
     	 this.head = this.head.getNext();
     	 return currentValue;
      }
+     public Integer peek() {
+    	 return (Integer)head.getKey();
+     }
      public void insert(INode myNode ,INode newNode){
         INode tempNode = myNode.getNext();
         myNode.setNext(newNode);
         newNode.setNext(tempNode);
         }
+     public void isEmpty() {
+    	 if(head == null) {
+    		 System.out.println("Empty");
+    	 }
+    	 else {
+    		 System.out.println("Not Empty");
+    	 }
+     }
      public INode popLast() {
          if (head == null) {
              System.out.println("Empty");

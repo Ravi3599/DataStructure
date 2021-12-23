@@ -16,4 +16,13 @@ public class MyQueue {
 		return myLinkedList.pop();
 		
 	}
+	public int size() {
+		return myLinkedList.size();
+	}
+	public void isEmpty() {
+		myLinkedList.isEmpty();
+	}
+	public Integer peek() {
+		return myLinkedList.peek();
+	}
 }
