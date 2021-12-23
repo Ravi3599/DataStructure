@@ -33,6 +33,14 @@ public class MyLinkedList {
             this.tail=newNode;
         }
         }
+     public int pop() {
+    	 if(this.head == null) {
+    		 return 0;
+    	 }
+    	 Integer currentValue = (Integer) head.getKey();
+    	 this.head = this.head.getNext();
+    	 return currentValue;
+     }
      public void insert(INode myNode ,INode newNode){
         INode tempNode = myNode.getNext();
         myNode.setNext(newNode);
