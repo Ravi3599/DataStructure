@@ -8,6 +8,7 @@ public class OrderedLinkedList {
 
         MyNode<Integer> myFourthNode = new MyNode<>(70);
         MyOrderedLinkedList myLinkedList = new MyOrderedLinkedList();
+
         myLinkedList.add(myFirstNode);
         myLinkedList.add(mySecondNode);
         myLinkedList.add(myThirdNode);
