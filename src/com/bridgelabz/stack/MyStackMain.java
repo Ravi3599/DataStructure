@@ -10,7 +10,10 @@ public class MyStackMain {
 		myStack.push(myFirstNode);
 		myStack.push(mySecondNode);
 		myStack.push(myThirdNode);
-		
+		myStack.peak();
+		myStack.pop();
+		myStack.pop();
 		myStack.printStack();
+
 	}
 }

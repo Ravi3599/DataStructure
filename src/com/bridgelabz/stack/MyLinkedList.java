@@ -37,13 +37,24 @@ public class MyLinkedList {
         myNode.setNext(newNode);
         newNode.setNext(tempNode);
         }
-     public INode popLast(){
-        INode tempNode = this.head;
-        tempNode = tempNode.getNext();
-        tempNode.setNext(null);
-        return tail;
-        }
-     public void size(){
+     public INode popLast() {
+         if (head == null) {
+             System.out.println("Empty");
+         } else if (head.getNext() == null) {
+             head = null;
+         } else {
+             INode currentNode = head;
+             INode preNode = head;
+             while (currentNode.getNext() != null) {
+                 preNode = currentNode;
+                 currentNode = currentNode.getNext();
+             }
+             preNode.setNext(null);
+         }
+		return tail;
+     }
+
+     public  int size(){
         int counter = 1;
         INode tempNode = this.head;
         while(tempNode != this.tail) {
@@ -55,7 +66,8 @@ public class MyLinkedList {
             }
 
         }
-            System.out.println("Size of current Linked List is: "+counter);
+        System.out.println("Size of current Linked List is: "+counter);
+        return counter;
         }
      public void search(INode myNode) {
             INode tempNode = this.head;
