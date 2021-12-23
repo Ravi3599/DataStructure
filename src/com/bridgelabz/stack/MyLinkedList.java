@@ -55,20 +55,19 @@ public class MyLinkedList {
      }
 
      public  int size(){
-        int counter = 1;
-        INode tempNode = this.head;
-        while(tempNode != this.tail) {
-            if (tempNode.getNext() == null) {
+    	 int counter = 1;
+         INode tempNode = this.head;
+         while(tempNode != this.tail) {
+             if (tempNode.getNext() == null) {
 
-            } else {
-                tempNode = tempNode.getNext();
-                counter++;
-            }
-
-        }
+             } else {
+                 tempNode = tempNode.getNext();
+                 counter++;
+             }
+         }
         System.out.println("Size of current Linked List is: "+counter);
         return counter;
-        }
+     }
      public void search(INode myNode) {
             INode tempNode = this.head;
             while(tempNode != null ) {

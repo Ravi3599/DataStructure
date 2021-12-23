@@ -19,4 +19,7 @@ public class MyStack {
 		return myLinkedList.popLast();
 		
 	}
+	public int size() {
+		return myLinkedList.size();
+	}
 }
