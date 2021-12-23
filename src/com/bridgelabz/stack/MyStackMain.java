@@ -11,7 +11,8 @@ public class MyStackMain {
 		myStack.push(mySecondNode);
 		myStack.push(myThirdNode);
 		myStack.size();
-		myStack.peak();
+		Integer valueOfPeekEle = myStack.peek();
+		System.out.println("Peek Element "+valueOfPeekEle);
 		myStack.pop();
 		myStack.pop();
 		myStack.printStack();
