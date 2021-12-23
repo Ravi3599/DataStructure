@@ -3,7 +3,7 @@ package com.bridgelabz.linkedlist;
 public class MyOrderedLinkedList {
     public   INode head;
     public   INode tail;
-    static int count =1;
+    static int counter =1;
     INode temp ;
     
     public MyOrderedLinkedList(){
@@ -17,37 +17,69 @@ public class MyOrderedLinkedList {
         }
         if (this.head == null) {
             this.head = newNode;
-             this.temp= newNode;
+            this.temp = newNode;
         } else {
             INode tempNode = this.head;
-
-            if (count == 1) {
-                if (this.head.getKey().compareTo(newNode.getKey()) > 0) {
+            if (counter == 1) {
+                if (tempNode.getKey().compareTo(newNode.getKey()) > 0) {
+                    newNode.setNext(tempNode);
+                    tempNode.setNext(null);
                     this.head = newNode;
-                    this.head.setNext(tempNode);
-                    count++;
-                }
-            }
-            if (count == 2) {
-                if (this.head.getNext().getKey().compareTo(newNode.getKey()) > 0) {
-                    tempNode.setNext(newNode);
-                    newNode.setNext(temp);
+                    counter++;
                 } else {
                     tail.setNext(newNode);
                     this.tail = newNode;
-                	}
-            	}
-        	}
+                    counter++;
+                }
+            }
+            if (counter == 2) {
+                tempNode = this.head;
+                if (newNode.getKey().compareTo(tempNode.getKey()) > 0 && newNode.getKey().compareTo(tempNode.getNext().getKey()) > 0) {
 
-    	}
-    public void isEmpty(){
-        if(this.head == null){
-            System.out.println("Linked list is Empty");
+                    tempNode.getNext().setNext(newNode);
+                    //tail.setNext(newNode);
+                    newNode.setNext(null);
+                    //this.head = tempNode;
+                    counter++;
+                }
+                if (newNode.getKey().compareTo(tempNode.getKey()) > 0 && newNode.getKey().compareTo(tempNode.getNext().getKey()) < 0) {
+                    temp = tempNode.getNext();
+                    tempNode.setNext(null);
+                    tempNode.setNext(newNode);
+                    newNode.setNext(temp);
+                    counter++;
+                }
+                if (newNode.getKey().compareTo(tempNode.getKey()) < 0) {
+                    newNode.setNext(tempNode);
+                    this.head = newNode;
+                    counter++;
+                }
+            }
+
+            if (counter == 3) {
+                tempNode = this.head;
+                if (tempNode.getKey().compareTo(newNode.getKey()) < 0 && tempNode.getNext().getKey().compareTo(newNode.getKey()) < 0 && tempNode.getNext().getNext().getKey().compareTo(newNode.getKey()) < 0) {
+                    tempNode.getNext().getNext().setNext(newNode);
+                    this.tail=newNode;
+                }
+                if (tempNode.getKey().compareTo(newNode.getKey()) > 0 && tempNode.getNext().getKey().compareTo(newNode.getKey()) > 0 && tempNode.getNext().getNext().getKey().compareTo(newNode.getKey()) > 0) {
+                    newNode.setNext(tempNode);
+                    this.head = newNode;
+                }
+                if (tempNode.getKey().compareTo(newNode.getKey()) < 0 && tempNode.getNext().getKey().compareTo(newNode.getKey()) > 0 && tempNode.getNext().getNext().getKey().compareTo(newNode.getKey()) > 0) {
+                    temp = tempNode.getNext();
+                    tempNode.setNext(newNode);
+                    newNode.setNext(temp);
+                }
+                if (tempNode.getKey().compareTo(newNode.getKey()) < 0 && tempNode.getNext().getKey().compareTo(newNode.getKey()) < 0 && tempNode.getNext().getNext().getKey().compareTo(newNode.getKey()) > 0) {
+                    temp = tempNode.getNext().getNext();
+                    tempNode.getNext().setNext(newNode);
+                    newNode.setNext(temp);
+                }
+            }
         }
-        else{
-            System.out.println("Linked list Not Empty");
-        }
-        }
+    }
+    
      public void append(INode newNode){
         if(this.head == null){
             this.head=newNode;
@@ -59,6 +91,14 @@ public class MyOrderedLinkedList {
             this.tail=newNode;
         }
         }
+     public void isEmpty(){
+         if(this.head == null){
+             System.out.println("Linked list is Empty");
+         }
+         else{
+             System.out.println("Linked list Not Empty");
+         }
+     }
      public void insert(INode myNode ,INode newNode){
         INode tempNode = myNode.getNext();
         myNode.setNext(newNode);

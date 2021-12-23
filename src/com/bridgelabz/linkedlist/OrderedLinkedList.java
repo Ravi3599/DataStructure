@@ -7,13 +7,15 @@ public class OrderedLinkedList {
         MyNode<Integer> myThirdNode = new MyNode<>(40);
 
         MyNode<Integer> myFourthNode = new MyNode<>(70);
-        MyLinkedList myLinkedList = new MyLinkedList();
+        MyOrderedLinkedList myLinkedList = new MyOrderedLinkedList();
         myLinkedList.add(myFirstNode);
         myLinkedList.add(mySecondNode);
         myLinkedList.add(myThirdNode);
         myLinkedList.add(myFourthNode);
 
         myLinkedList.printMyNodes();
+        myLinkedList.isEmpty();
+        myLinkedList.size();
     }
 
 }
