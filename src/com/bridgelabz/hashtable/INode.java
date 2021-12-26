@@ -1,10 +1,10 @@
 package com.bridgelabz.hashtable;
 
 
-public interface INode<K extends Comparable> {
-        K getKey();
-        void setKey();
+public interface INode<K> {
+    K getKey();
+    void setKey();
 
-        INode getNext();
-        void setNext(INode<K> tempNode);
+    INode getNext();
+    void setNext(INode<K> tempNode);
 }
