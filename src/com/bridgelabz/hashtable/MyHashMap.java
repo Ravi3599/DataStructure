@@ -1,7 +1,7 @@
 package com.bridgelabz.hashtable;
 
 
-public class MyHashMap<K, V> {
+public class MyHashMap<K extends Comparable, V> {
 		MyLinkedList<K> myLinkedList;
 		
 		public MyHashMap() {
