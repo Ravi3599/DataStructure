@@ -93,17 +93,18 @@ public class MyLinkedList<K> {
             tempNode=tempNode.getNext();
         }
     }
-    public void deleteKey(INode myNode ){
+
+    public void delete(INode<K> anyNode){
         INode tempNode = this.head;
-        while(tempNode != null ) {
-            if (myNode.getKey() == tempNode.getKey()) {
-                INode temp =tempNode.getNext();
-                INode demoNode = this.head;
-                demoNode = demoNode.getNext();
-                demoNode.setNext(temp);
+        if ( anyNode.equals(this.head)) pop();
+        if ( anyNode.equals(this.tail)) popLast();
+        while (!(tempNode.getNext().equals(tail))){
+            if (tempNode.getNext().getKey().equals(anyNode.getKey())){
+                INode tempNode1 = tempNode.getNext().getNext();
+                tempNode.setNext(tempNode1);
                 break;
             }
-            tempNode=tempNode.getNext();
+            tempNode = tempNode.getNext();
         }
     }
     public  void printMyNodes(){

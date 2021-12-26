@@ -52,5 +52,4 @@ public class MyMapNode<K , V > implements INode <K> {
             MyMapNodeString.append("->").append(next);
         return MyMapNodeString.toString();
     }
-   
 }

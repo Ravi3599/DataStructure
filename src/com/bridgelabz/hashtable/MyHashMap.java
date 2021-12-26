@@ -26,6 +26,12 @@ public class MyHashMap <K, V>{
             myMapNode.setValue(value);
         }
     }
+    public void remove(K key){
+        MyMapNode<K,V> myMapNode = (MyMapNode<K,V>) this.myLinkedList.search(key);
+        if(myMapNode != null) {
+            this.myLinkedList.delete(myMapNode);
+        }
+    }
 
     public void printHashMap()
     {

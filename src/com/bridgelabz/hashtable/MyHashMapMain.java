@@ -18,7 +18,7 @@ public class MyHashMapMain {
             myHashMap.add(word, value);
 
         }
-
+        myHashMap.remove("avoidable");
         System.out.println(myHashMap);
         int frequency = myHashMap.get("paranoid");
         System.out.println("Frequency of paranoid is: "+frequency);
